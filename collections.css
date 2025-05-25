@@ -1,0 +1,134 @@
+:root {
+    --bg-color: #101820;
+    --text-color: #ffffff;
+    --header-bg: #f2aa4c;
+    --header-text: #101820;
+    --button-bg: #333;
+    --button-text: #f2aa4c;
+    --card-bg: #181818;
+}
+
+body.light-mode {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg: #333;
+    --header-text: #f2aa4c;
+    --button-bg: #f2aa4c;
+    --button-text: #333;
+    --card-bg: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--button-bg);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--button-text);
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+body.light-mode .slider::before {
+    transform: translateX(30px);
+}
+
+.collections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.collection-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.collection-card:hover {
+    transform: scale(1.03);
+}
+
+.collection-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.collection-card h2 {
+    font-size: 1.2em;
+    margin: 15px;
+}
+
+.collection-card p {
+    font-size: 1em;
+    margin: 0 15px 15px;
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid var(--button-bg);
+}
